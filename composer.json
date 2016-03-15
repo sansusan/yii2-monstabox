@@ -1,0 +1,21 @@
+{
+    "name": "sansusan/yii2-monstabox",
+    "description": "Yii2 monstabox",
+    "type": "yii2-extension",
+    "keywords": ["ftp","monstabox"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sansusan",
+            "email": "sansusan@yandex.ru"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "sansusan\\monstabox\\": ""
+        }
+    }
+}
