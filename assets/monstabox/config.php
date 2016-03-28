@@ -3,7 +3,7 @@
 # Open README file for descriptions and help.
 
 $ftpHost = "";
-$ftpPort = "21";
+$ftpPort = "32221";
 $ftpMode = "1";
 $ftpSSL  = "0";
 $ftpDir  = "";

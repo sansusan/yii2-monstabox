@@ -12,6 +12,11 @@ class Monstabox extends Widget
 {
     private $_assetsUrl;
 
+    public $ftp_host;
+    public $ftp_pass;
+    public $ftp_port;
+    public $ftp_user;
+
     public function run()
     {
         if($this->_assetsUrl === null)
@@ -36,12 +41,15 @@ class Monstabox extends Widget
 			function resizeIframe()
 			{
 				$('iframe').attr('width',$('#iframe-div').width());
-				$('iframe').attr('height','700');
+				//$('iframe').attr('height','800');
 			}
 		      ", View::POS_END, 'iframe');
 
+        $url = '/monstabox/login.php?ftp_host=' . $this->ftp_host . '&ftp_pass=' . $this->ftp_pass . '&ftp_port=' . $this->ftp_port . '&ftp_user=' . $this->ftp_user;
+
+
         echo '<div id="iframe-div">';
-        echo	'<iframe src="' . $this->_assetsUrl[1] . '/monstabox"></iframe>';
+        echo	'<iframe src="' . $this->_assetsUrl[1] . $url . '" style="position: absolute; height: 98%; border: none"></iframe>';
         echo '</div>';
     }
 }

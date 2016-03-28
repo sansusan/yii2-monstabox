@@ -662,6 +662,7 @@ function uploadFileCheck(e) {
 function refreshListing() {
 
     openThisFolder(globalOpenFolder, 0);
+    //window.location = window.location.href;
 }
 
 var globalOpenFolder;

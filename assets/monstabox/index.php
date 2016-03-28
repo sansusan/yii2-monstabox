@@ -86,7 +86,7 @@ if ($ftpAction == "download" || $ftpAction == "download_zip" || $ftpAction == "i
     }
     
 } else {
-    
+
     if ($ajaxRequest == 0) {
         
         // Check if logout link has been clicked
@@ -95,10 +95,10 @@ if ($ftpAction == "download" || $ftpAction == "download_zip" || $ftpAction == "i
         // Include the header
         displayHeader();
     }
-    
+
     // Attempt to login with session or post vars
     attemptLogin();
-    
+
     // Check referer
     if (checkReferer() == 1) {
         
@@ -107,7 +107,7 @@ if ($ftpAction == "download" || $ftpAction == "download_zip" || $ftpAction == "i
         
         // Display content when logged in
         if ($_SESSION["loggedin"] == 1) {
-            
+
             if ($ajaxRequest == 0) {
                 displayFormStart();
                 displayFtpActions();
@@ -475,7 +475,7 @@ function displayLoginForm($posted)
 
 <div align="center">
     <div id="loginForm" align="left">
-        <div id="loginFormTitle">MONSTA Box</div>
+        <div id="loginFormTitle">Поключение к ЛПУ</div>
             <div id="loginFormContent">
 
 <?php
@@ -544,23 +544,6 @@ function displayLoginForm($posted)
     <input type="submit" value="<?php
         echo $lang_btn_login;
 ?>" id="btnLogin">
-</div>
-<div class="floatRight">
-<?php
-if ($versionCheck == 1 && ((intval(ini_get("allow_url_fopen")) == 1 && (function_exists("file_get_contents") || (function_exists("fopen") && function_exists("stream_get_contents")))) || (function_exists("curl_init") && function_exists("curl_exec")))) {
-?>
-<iframe src="https://www.monstacdn.com/version/?a=box&v=<?php
-    echo $version;
-?>" width="200" height="20" scrolling="no" style="border:0"></iframe>
-<?php
-} else {
-?>
-<a href="http://www.monstahq.com/apps/box/splash/">version <?php
-    echo $version;
-?></a>
-<?php
-}
-?>
 </div>
 
 <br><br>
@@ -4029,7 +4012,6 @@ function getParentDir($folder)
 
 function displaySkinSelect($skin)
 {
-    
     global $lang_skin;
     global $lang_skins_empty;
     global $lang_skins_locked;
